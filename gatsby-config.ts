@@ -22,7 +22,7 @@ const config: GatsbyConfig = {
      {
     resolve: `gatsby-plugin-s3`,
     options: {
-      bucketName: "harshamurupudi.com",
+      bucketName: "www.harshamurupudi.com",
     },
   },
   ],
