@@ -8,3 +8,9 @@ export const wrapRootElement = wrapWithProvider;
 export const wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>;
 };
+
+export const onInitialClientRender = () => {
+  setTimeout(function () {
+    document.getElementById('___loader').style.display = 'none';
+  }, 1000);
+};
