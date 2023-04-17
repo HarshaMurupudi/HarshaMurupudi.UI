@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import Cookies from 'universal-cookie';
 import { v4 as uuid } from 'uuid';
 
 import Message from '../../components/elements/chatbot/Message';
 import Card from '../../components/elements/chatbot/Card';
+import axios from '../../lib/axios';
+import api from './api';
 
 const cookies = new Cookies();
 
@@ -50,7 +51,7 @@ function Chat() {
     };
 
     try {
-      const res = await axios.post('http://localhost:5001/api/df_text_query', {
+      const res = await axios.post(api.postTextQuery, {
         text,
         userID: cookies.get('userID'),
       });
@@ -71,7 +72,7 @@ function Chat() {
   };
   const df_event_query = async (event) => {
     try {
-      const res = await axios.post('http://localhost:5001/api/df_event_query', {
+      const res = await axios.post(api.postEventQuery, {
         event,
         userID: cookies.get('userID'),
       });
