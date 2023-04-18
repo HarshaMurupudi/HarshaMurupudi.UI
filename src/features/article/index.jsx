@@ -18,8 +18,6 @@ function compileMDX(mdx) {
 function Article({ drawerContentId }) {
   const [content, setContent] = useState();
 
-  console.log(drawerContentId);
-
   const {
     allMdx: { nodes },
   } = useStaticQuery(graphql`
@@ -50,7 +48,6 @@ function Article({ drawerContentId }) {
 
     const { body } = selectedNode;
 
-    console.log(nodes);
     const code = compileMDX(body);
 
     const { default: Content } = runSync(code, runtime);

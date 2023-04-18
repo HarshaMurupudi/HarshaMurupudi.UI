@@ -11,7 +11,6 @@ const ImageCard = ({
   createdDate,
   id,
 }) => {
-  console.log(onDrawerContentClick);
   return (
     <div onClick={() => onDrawerContentClick(contentCategory, id)}>
       <div

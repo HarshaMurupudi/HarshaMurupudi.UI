@@ -8,7 +8,7 @@ const HorizontalCardCollection = ({
   collection,
 }) => {
   return (
-    <div class='grid grid-cols-2 md:grid-cols-3 gap-4'>
+    <div class='grid grid-cols-4 md:grid-cols-1 gap-4'>
       {(collection || []).map(
         ({ id, title, tags, createdDate, description, slug, actions }) => {
           return (

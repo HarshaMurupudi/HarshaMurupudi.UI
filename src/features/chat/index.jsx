@@ -18,13 +18,9 @@ const useConstructor = (callBack = () => {}) => {
 
 function Chat() {
   useConstructor(() => {
-    console.log('Occurs ONCE, BEFORE the initial render.');
-
     if (cookies.get('userID') === undefined) {
       cookies.set('userID', uuid(), { path: '/' });
     }
-
-    console.log(cookies.get('userID'));
   });
 
   let mainRef = useRef(null);
@@ -94,7 +90,6 @@ function Chat() {
   };
 
   const renderCards = (cards) => {
-    console.log(cards);
     return cards.map((card, i) => <Card key={i} payload={card.structValue} />);
   };
 
@@ -109,7 +104,6 @@ function Chat() {
       message.msg.payload.fields &&
       message.msg.payload.fields.cards
     ) {
-      console.log('hit card');
       return (
         <div key={i}>
           <div>
@@ -145,8 +139,6 @@ function Chat() {
       e.target.value = '';
     }
   };
-
-  console.log(messages);
 
   return (
     <div>

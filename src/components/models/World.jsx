@@ -4,12 +4,13 @@ Command: npx gltfjsx@6.1.4 pirate-raft-world-v4.glb
 */
 
 import React, { useRef, Suspense } from 'react';
-import { useGLTF, Cloud } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import { Canvas, useLoader } from '@react-three/fiber';
 import Shark from './Shark';
 import Sail from './Sail';
 import Gauca from './Gauca';
+import Cloud from './Cloud';
 
 export function World(props) {
   const { nodes, materials } = useGLTF('/models/pirate-raft-world.glb');
@@ -29,7 +30,6 @@ export function World(props) {
     b: 99 / 255,
     isColor: true,
   };
-  console.log(props.onDrawerToggle);
 
   return (
     <group {...props} dispose={null}>
@@ -243,7 +243,12 @@ export function World(props) {
 
       <group position={[-25, 18, 2.82]}>
         <Suspense fallback={null}>
-          <Cloud position={[40, -2, -35]} speed={0.1} opacity={0.4} />
+          <group position={[40, -6, -25]}>
+            <Cloud />
+          </group>
+          <group scale={[1.8, 2, 1.83]} position={[40, -6, -35]}>
+            <Cloud />
+          </group>
         </Suspense>
       </group>
     </group>

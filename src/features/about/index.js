@@ -7,13 +7,17 @@ const About = () => {
     <div className='px-10'>
       <div>
         <p>
-          <span className='text-5xl text-gray-900 dark:text-white'>
+          <span className='sm:text-base text-5xl text-gray-900 dark:text-white'>
             Sriharsha Murupudi
           </span>
-          <span className='text-xs text-gray-900 dark:text-white m-4'>aka</span>
-          <span className='text-3xl text-gray-900 dark:text-white'>Harsha</span>
+          <span className='sm:text-base text-xs text-gray-900 dark:text-white m-4'>
+            aka
+          </span>
+          <span className='sm:text-base text-3xl text-gray-900 dark:text-white'>
+            Harsha
+          </span>
         </p>
-        <p className='text-3xl text-gray-600 dark:text-white'>
+        <p className='text-base md:text-3xl text-gray-600 dark:text-white'>
           Software Developer & cartoonist
         </p>
       </div>
@@ -21,8 +25,8 @@ const About = () => {
       <div className='mt-4 mb-4'>
         <p className='font-semibold'>A little context</p>
 
-        <div className='grid grid-cols-2 gap-12 sm:grid-cols-1 md:grid-cols-2 place-content-center'>
-          <div className='p-6'>
+        <div className='grid grid-cols-2 sm:grid-cols-1 gap-12  place-content-center'>
+          <div className='p-6 order-first sm:order-last'>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
               I sit at the intersection of programming and drawing. These two
               are at the core of everything I make. Combining them into a
@@ -42,7 +46,7 @@ const About = () => {
             </p>
             <p class='mb-3  text-gray-900 dark:text-gray-400'>
               You can contact me by email at
-              <span className='italic font-semibold mx-1'>
+              <span className='block text-sm italic font-semibold'>
                 harsha.murupudi@gmail.com
               </span>
               to say hi! I always appreciate meeting new people.

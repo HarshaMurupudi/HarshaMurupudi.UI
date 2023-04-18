@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { OrbitControls, Environment, ContactShadows } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { connect } from 'react-redux';
@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { World } from '../../../components/models';
 
 const LandingComponent = (props) => {
-  console.log(props);
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <Canvas

@@ -64,16 +64,11 @@ const AppLayout = ({
     backdropClasses:
       'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30',
     onHide: () => {
-      console.log('drawer is hidden');
       setDrawerContentCategory('Comics');
       setDrawerContentType('Collection');
     },
-    onShow: () => {
-      console.log('drawer is shown');
-    },
-    onToggle: () => {
-      console.log('drawer has been toggledd');
-    },
+    onShow: () => {},
+    onToggle: () => {},
   };
 
   useEffect(() => {
@@ -89,11 +84,7 @@ const AppLayout = ({
   }, []);
 
   const onDrawerToggle = (title) => {
-    console.log('toggle hit!');
-
     if (drawer.toggle) {
-      console.log('toggle exists');
-      console.log(drawer.toggle);
       // drawer.toggle();
       drawer.show();
     } else {
@@ -111,17 +102,11 @@ const AppLayout = ({
     // Checking isValidElement is the safe way and avoids a
     // typescript error too.
 
-    console.log(children, child);
     if (React.isValidElement(child)) {
-      console.log('valid');
-
-      console.log(React.cloneElement(child, { onDrawerToggle }));
       return React.cloneElement(child, { onDrawerToggle });
     }
     return child;
   });
-
-  console.log(childrenWithProps);
 
   return (
     <div>
