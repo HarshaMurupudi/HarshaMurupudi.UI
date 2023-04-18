@@ -9,7 +9,7 @@ const ImageCollection = ({
   collection,
 }) => {
   return collection.length > 0 ? (
-    <div class='grid grid-cols-4 sm:grid-cols-1 gap-4'>
+    <div class='grid grid-cols-4 md:grid-cols-1 gap-4'>
       {(collection || []).map(({ id, title, src, tags, createdDate }) => {
         return (
           <div>
