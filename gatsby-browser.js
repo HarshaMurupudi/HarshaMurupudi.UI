@@ -12,5 +12,5 @@ export const wrapPageElement = ({ element, props }) => {
 export const onInitialClientRender = () => {
   setTimeout(function () {
     document.getElementById('___loader').style.display = 'none';
-  }, 3000);
+  }, 2000);
 };
