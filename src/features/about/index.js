@@ -7,17 +7,17 @@ const About = () => {
     <div className='px-10'>
       <div>
         <p>
-          <span className='sm:text-base text-5xl text-gray-900 dark:text-white'>
+          <span className='text-base lg:text-5xl text-gray-900 dark:text-white'>
             Sriharsha Murupudi
           </span>
-          <span className='sm:text-base text-xs text-gray-900 dark:text-white m-4'>
+          <span className='text-xs lg:text-base text-gray-900 dark:text-white m-4'>
             aka
           </span>
-          <span className='sm:text-base text-3xl text-gray-900 dark:text-white'>
+          <span className='text-base lg:text-3xl text-gray-900 dark:text-white'>
             Harsha
           </span>
         </p>
-        <p className='text-base md:text-3xl text-gray-600 dark:text-white'>
+        <p className='text-base lg:text-3xl text-gray-600 dark:text-white'>
           Software Developer & cartoonist
         </p>
       </div>
@@ -25,8 +25,8 @@ const About = () => {
       <div className='mt-4 mb-4'>
         <p className='font-semibold'>A little context</p>
 
-        <div className='grid grid-cols-2 sm:grid-cols-1 gap-12  place-content-center'>
-          <div className='p-6 order-first sm:order-last'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12  place-content-center'>
+          <div className='p-6 order-last lg:order-first'>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
               I sit at the intersection of programming and drawing. These two
               are at the core of everything I make. Combining them into a

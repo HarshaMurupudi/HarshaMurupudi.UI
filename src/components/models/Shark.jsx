@@ -37,7 +37,7 @@ export default function Shark({
     >
       <group ref={ref}>
         <mesh geometry={geometry} material={material} />
-        {hovered && (
+        {true && (
           <Html distanceFactor={10} zIndexRange={[2, 6]}>
             <div className='content'>{label}</div>
           </Html>

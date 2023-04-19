@@ -12,7 +12,7 @@ const LandingComponent = (props) => {
         shadows
         camera={{
           position: [-170, 70, 180],
-          fov: 6,
+          fov: 8,
           near: 0.1,
           far: 1000,
         }}

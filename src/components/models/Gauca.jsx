@@ -32,7 +32,7 @@ export default function Gauca({ initial, label, onDrawerToggle, ...props }) {
             scale={0.2}
             // onClick={() => onDrawerToggle(label)}
           />
-          {hovered && (
+          {true && (
             <Html distanceFactor={10} zIndexRange={[2, 6]}>
               <div className='content'>{'Hi'}</div>
             </Html>
