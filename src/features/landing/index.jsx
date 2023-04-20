@@ -2,17 +2,20 @@ import React, { useEffect } from 'react';
 import { OrbitControls, Environment, ContactShadows } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { connect } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 
-import { World } from '../../../components/models';
+import { World } from '../../components/models';
 
 const LandingComponent = (props) => {
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <Canvas
         shadows
         camera={{
           position: [-170, 70, 180],
-          fov: 8,
+          fov: isMobile ? 8 : 6,
           near: 0.1,
           far: 1000,
         }}

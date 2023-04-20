@@ -127,8 +127,8 @@ export function World(props) {
         />
       </group>
       <Shark
-        position={[15.88, -0.3, -11.06]}
-        rotation={[Math.PI / 2, -0.36, -1.6]}
+        position={[15.88, -0.8, -11.06]}
+        rotation={[Math.PI / 2, -0.5, -1.8]}
         scale={[2, 2, 1.83]}
         geometry={nodes.Plane005.geometry}
         material={materials['Shark Fin']}
