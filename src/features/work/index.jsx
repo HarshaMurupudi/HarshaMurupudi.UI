@@ -9,7 +9,7 @@ const Work = ({ onDrawerContentClick }) => {
     <div>
       <HorizontalCardCollection
         onDrawerContentClick={onDrawerContentClick}
-        contentCategory={'Article'}
+        contentCategory={'Work'}
         collection={workData}
       />
     </div>

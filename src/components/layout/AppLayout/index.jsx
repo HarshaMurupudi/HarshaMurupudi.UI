@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { Drawer } from 'flowbite';
 
@@ -26,6 +26,7 @@ const AppLayout = ({
   setDrawerContentCategory,
   setDrawerContentId,
 }) => {
+  const indexRef = useRef(null);
   const collectionComponentLookup = {
     Bio: About,
     Collection,
@@ -40,7 +41,8 @@ const AppLayout = ({
   const detailsComponentLookup = {
     'Comics Details': ImageDetails,
     'Collection Details': ImageDetails,
-    'Article Details': Article,
+    'Projects Details': Article,
+    'Work Details': Article,
   };
 
   const DrawerContentComponent =
@@ -55,41 +57,33 @@ const AppLayout = ({
   };
 
   let drawer = {};
+
   const options = {
     placement: 'right',
-    backdrop: true,
+    backdrop: false,
     bodyScrolling: false,
     edge: false,
     edgeOffset: '',
-    backdropClasses:
-      'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30',
+    // backdropClasses:
+    //   'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30',
     onHide: () => {
       setDrawerContentCategory('Comics');
       setDrawerContentType('Collection');
+      // this.backdrop = false;
     },
     onShow: () => {},
     onToggle: () => {},
   };
 
   useEffect(() => {
-    // $targetEl = document.getElementById('drawer-js-example');
-
-    // const drawer = {};
-
-    // set the drawer menu element
-    const $targetEl = document.getElementById('drawer-js-example') || null;
-    drawer = new Drawer($targetEl, options);
-
-    // drawer.hide();
+    drawer = new Drawer(indexRef.current, options);
   }, []);
 
   const onDrawerToggle = (title) => {
     if (drawer.toggle) {
-      // drawer.toggle();
       drawer.show();
     } else {
-      const $targetEl = document.getElementById('drawer-js-example') || null;
-      drawer = new Drawer($targetEl, options);
+      drawer = new Drawer(indexRef.current, options);
 
       drawer.toggle();
     }
@@ -98,10 +92,16 @@ const AppLayout = ({
     setDrawerContentType('Collection');
   };
 
-  const childrenWithProps = React.Children.map(children, (child) => {
-    // Checking isValidElement is the safe way and avoids a
-    // typescript error too.
+  const handleDrawerClose = () => {
+    if (drawer.toggle) {
+      drawer.hide();
+    } else {
+      drawer = new Drawer(indexRef.current, options);
+      drawer.hide();
+    }
+  };
 
+  const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child, { onDrawerToggle });
     }
@@ -110,7 +110,7 @@ const AppLayout = ({
 
   return (
     <div>
-      <SideDrawer>
+      <SideDrawer handleDrawerClose={handleDrawerClose} indexRef={indexRef}>
         <DrawerContentComponent onDrawerContentClick={onDrawerContentClick} />
       </SideDrawer>
       {childrenWithProps}

@@ -10,6 +10,8 @@ const SideDrawer = ({
   children,
   setDrawerContentCategory,
   setDrawerContentType,
+  handleDrawerClose,
+  indexRef,
 }) => {
   const handleCategoryClick = () => {
     setDrawerContentCategory(drawerContentCategory);
@@ -19,6 +21,7 @@ const SideDrawer = ({
   return (
     <div>
       <div
+        ref={indexRef}
         id='drawer-js-example'
         className='fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-10/12 dark:bg-gray-800 delay-100'
         tabindex='-1'
@@ -26,7 +29,7 @@ const SideDrawer = ({
       >
         <h5
           id='drawer-js-label'
-          className='inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400'
+          className='cursor-pointer inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400'
           onClick={() => handleCategoryClick()}
         >
           <svg
@@ -45,10 +48,11 @@ const SideDrawer = ({
           {drawerContentCategory}
         </h5>
         <button
-          id='drawer-hide-button'
           type='button'
-          aria-controls='drawer-example'
-          className='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'
+          data-drawer-hide='drawer-js-example'
+          aria-controls='drawer-js-example'
+          class='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'
+          onClick={() => handleDrawerClose()}
         >
           <svg
             aria-hidden='true'

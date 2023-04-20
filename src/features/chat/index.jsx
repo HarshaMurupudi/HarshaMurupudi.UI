@@ -31,8 +31,6 @@ function Chat() {
   }, []);
 
   useEffect(() => {
-    // df_event_query('Welcome');
-
     mainRef.scrollIntoView({ behaviour: 'smooth' });
   }, [messages]);
 
@@ -138,7 +136,7 @@ function Chat() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await df_text_query(message);
+    message && (await df_text_query(message));
     setMessage('');
   };
 
