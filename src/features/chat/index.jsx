@@ -133,11 +133,13 @@ function Chat() {
     }
   };
 
-  const handleInputKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      df_text_query(e.target.value);
-      e.target.value = '';
-    }
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await df_text_query(message);
+    setMessage('');
   };
 
   return (
@@ -151,7 +153,27 @@ function Chat() {
           }}
           style={{ float: 'left', clear: 'both' }}
         ></div>
-        <input type='text' onKeyPress={handleInputKeyPress} />
+        <form onSubmit={handleSubmit}>
+          <div class='flex flex-row items-center h-16 rounded-xl bg-white w-full px-0 md:px-4'>
+            <div class='flex-grow ml-1 md:ml-4'>
+              <div class='relative w-full'>
+                <input
+                  type='text'
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                />
+              </div>
+            </div>
+            <div className='ml-1 md:ml-4'>
+              <button
+                type='submit'
+                class='flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0'
+              >
+                <span>Send</span>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   );
