@@ -11,7 +11,7 @@ const SideDrawer = ({
   setDrawerContentCategory,
   setDrawerContentType,
   handleDrawerClose,
-  indexRef,
+  drawerRef,
 }) => {
   const handleCategoryClick = () => {
     setDrawerContentCategory(drawerContentCategory);
@@ -21,7 +21,7 @@ const SideDrawer = ({
   return (
     <div>
       <div
-        ref={indexRef}
+        ref={drawerRef}
         id='drawer-js-example'
         className='fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-10/12 dark:bg-gray-800 delay-100'
         tabindex='-1'

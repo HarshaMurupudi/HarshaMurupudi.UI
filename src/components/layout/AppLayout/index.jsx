@@ -26,7 +26,7 @@ const AppLayout = ({
   setDrawerContentCategory,
   setDrawerContentId,
 }) => {
-  const indexRef = useRef(null);
+  const drawerRef = useRef(null);
   const collectionComponentLookup = {
     Bio: About,
     Collection,
@@ -44,7 +44,6 @@ const AppLayout = ({
     'Projects Details': Article,
     'Work Details': Article,
   };
-
   const DrawerContentComponent =
     drawerContentType === 'Collection'
       ? collectionComponentLookup[drawerContentCategory]
@@ -57,7 +56,6 @@ const AppLayout = ({
   };
 
   let drawer = {};
-
   const options = {
     placement: 'right',
     backdrop: false,
@@ -76,17 +74,12 @@ const AppLayout = ({
   };
 
   useEffect(() => {
-    drawer = new Drawer(indexRef.current, options);
+    drawer = new Drawer(drawerRef.current, options);
   }, []);
 
   const onDrawerToggle = (title) => {
-    if (drawer.toggle) {
-      drawer.show();
-    } else {
-      drawer = new Drawer(indexRef.current, options);
-
-      drawer.toggle();
-    }
+    drawer = new Drawer(drawerRef.current, options);
+    drawer.toggle();
 
     setDrawerContentCategory(title);
     setDrawerContentType('Collection');
@@ -96,7 +89,7 @@ const AppLayout = ({
     if (drawer.toggle) {
       drawer.hide();
     } else {
-      drawer = new Drawer(indexRef.current, options);
+      drawer = new Drawer(drawerRef.current, options);
       drawer.hide();
     }
   };
@@ -110,7 +103,7 @@ const AppLayout = ({
 
   return (
     <div>
-      <SideDrawer handleDrawerClose={handleDrawerClose} indexRef={indexRef}>
+      <SideDrawer handleDrawerClose={handleDrawerClose} drawerRef={drawerRef}>
         <DrawerContentComponent onDrawerContentClick={onDrawerContentClick} />
       </SideDrawer>
       {childrenWithProps}
