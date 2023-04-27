@@ -140,6 +140,8 @@ function Chat() {
     setMessage('');
   };
 
+  const _handleQuickReplyPayload = (event, payload, text) => {};
+
   return (
     <div>
       <div id='chatbot'>
