@@ -140,7 +140,12 @@ function Chat() {
     setMessage('');
   };
 
-  const _handleQuickReplyPayload = (event, payload, text) => {};
+  const _handleQuickReplyPayload = (event, payload, text) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    df_text_query(text);
+  };
 
   return (
     <div>
