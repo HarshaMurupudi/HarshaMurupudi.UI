@@ -6,6 +6,7 @@ import Message from '../../components/elements/chatbot/Message';
 import Card from '../../components/elements/chatbot/Card';
 import axios from '../../lib/axios';
 import api from './api';
+import QuickReplies from '../../components/elements/chatbot/QuickReplies';
 
 const cookies = new Cookies();
 
@@ -116,6 +117,28 @@ function Chat() {
             </div>
           </div>
         </div>
+      );
+    } else if (
+      message.msg &&
+      message.msg.payload &&
+      message.msg.payload.fields &&
+      message.msg.payload.fields.quick_replies
+    ) {
+      const {
+        msg: {
+          payload: {
+            fields: { text, quick_replies },
+          },
+        },
+      } = message;
+      return (
+        <QuickReplies
+          text={text ? text : null}
+          key={i}
+          replyClick={_handleQuickReplyPayload}
+          speaks={message.speaks}
+          payload={quick_replies.listValue.values}
+        />
       );
     }
   };
