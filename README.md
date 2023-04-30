@@ -1,2 +1,2 @@
 
-## Harsha Murupudi - Personal website
+## Harsha Murupudi - Personal website UI
