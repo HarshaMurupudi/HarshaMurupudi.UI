@@ -122,12 +122,12 @@ function Chat() {
       message.msg &&
       message.msg.payload &&
       message.msg.payload.fields &&
-      message.msg.payload.fields.quick_replies
+      message.msg.payload.fields.quick_reply
     ) {
       const {
         msg: {
           payload: {
-            fields: { text, quick_replies },
+            fields: { text, quick_reply },
           },
         },
       } = message;
@@ -137,7 +137,7 @@ function Chat() {
           key={i}
           replyClick={_handleQuickReplyPayload}
           speaks={message.speaks}
-          payload={quick_replies.listValue.values}
+          payload={quick_reply.listValue.values}
         />
       );
     }
