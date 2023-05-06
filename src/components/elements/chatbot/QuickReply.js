@@ -23,12 +23,14 @@ function QuickReply(props) {
       </a>
     );
   } else {
-    <a
-      href={link.stringValue}
-      className='px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200'
-    >
-      {text.stringValue}
-    </a>;
+    return (
+      <a
+        href={link.stringValue}
+        className='px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200'
+      >
+        {text.stringValue}
+      </a>
+    );
   }
 }
 
