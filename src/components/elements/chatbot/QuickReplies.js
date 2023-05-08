@@ -36,9 +36,7 @@ function QuickReplies(props) {
           alt=''
         />
       </div>
-      <div>
-        <div>{renderQuickReplies(props.payload)}</div>
-      </div>
+      <div className='mb-3'>{renderQuickReplies(props.payload)}</div>
     </div>
   );
 }

@@ -14,7 +14,7 @@ function QuickReply(props) {
     return (
       <a
         href='#'
-        className='px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200'
+        className='px-6 py-3 ml-2 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200'
         onClick={(event) =>
           props.click(event, payload.stringValue, text.stringValue)
         }
@@ -26,7 +26,7 @@ function QuickReply(props) {
     return (
       <a
         href={link.stringValue}
-        className='px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200'
+        className='px-6 py-3 ml-2 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200'
       >
         {text.stringValue}
       </a>
