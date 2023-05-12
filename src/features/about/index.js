@@ -18,41 +18,41 @@ const About = () => {
           </span>
         </p>
         <p className='text-base lg:text-3xl text-gray-600 dark:text-white'>
-          Software Developer & cartoonist
+          Web Developer
         </p>
       </div>
 
       <div className='mt-4 mb-4'>
         <p className='font-semibold'>A little context</p>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12  place-content-center'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6 place-content-center'>
           <div className='p-6 order-last lg:order-first'>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
-              I sit at the intersection of programming and drawing. These two
-              are at the core of everything I make. Combining them into a
-              coherent career.
+              I sit at the intersection of programming and art. These two are at
+              the core of everything I make. Combining them into a coherent
+              career.
             </p>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
               My work fits under the umbrellas of fullstack web development.
-              With some cartoons and visual illustration sprinkled on top.
+              With some art sprinkled on top.
             </p>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
-              I work with Typescrit on frontend and backend. ReactJS and NodeJS
-              are my preferred technologies.
+              I work with ReactJS on frontend and for the backend I use NodeJS
+              or Java.
             </p>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
               I'm currently working as fullstack developer at DMA. We're
               developing IT solutions to solve problem for our clients.
             </p>
-            <p class='mb-3  text-gray-900 dark:text-gray-400'>
+            <p class='mb-3 text-gray-900 dark:text-gray-400 break-words'>
               You can contact me by email at
-              <span className='block text-sm italic font-semibold'>
+              <span className=' mx-1 text-sm italic font-semibold'>
                 harsha.murupudi@gmail.com
               </span>
               to say hi! I always appreciate meeting new people.
             </p>
           </div>
-          <div className='p-6'>
+          <div className='p-1 lg:p-6'>
             <img
               className='h-auto w-2/3 rounded-lg ml-2'
               src={'/images/me/harsha.jpg'}
