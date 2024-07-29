@@ -29,20 +29,20 @@ const AppLayout = ({
   const drawerRef = useRef(null);
   const collectionComponentLookup = {
     Bio: About,
-    Collection,
-    Comics,
-    Projects,
-    Work,
+    Art: Collection,
+    // Comics,
+    // Projects,
+    IT:Work,
     ImageDetails,
     Chat,
   };
 
   const detailsComponentKey = `${drawerContentCategory} ${drawerContentType}`;
   const detailsComponentLookup = {
-    'Comics Details': ImageDetails,
-    'Collection Details': ImageDetails,
-    'Projects Details': Article,
-    'Work Details': Article,
+    // 'Comics Details': ImageDetails,
+    'Art Details': ImageDetails,
+    // 'Projects Details': Article,
+    'IT Details': Article,
   };
   const DrawerContentComponent =
     drawerContentType === 'Collection'

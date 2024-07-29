@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  drawerContentCategory: 'Comics',
+  drawerContentCategory: 'Art',
   drawerContentType: 'Collection',
   drawerContentId: '',
 };

@@ -111,7 +111,7 @@ export function World(props) {
         rotation={[Math.PI / 2, -0.5, -1.8]}
         scale={[2, 2, 1.83]}
         initial={0}
-        label={'Collection'}
+        label={'Art'}
         onDrawerToggle={props.onDrawerToggle}
       />
       <Shark
@@ -121,10 +121,10 @@ export function World(props) {
         rotation={[1.34, 0.08, -2.14]}
         scale={[2, 2, 1.83]}
         initial={0}
-        label={'Projects'}
+        label={'IT'}
         onDrawerToggle={props.onDrawerToggle}
       />
-      <Shark
+      {/* <Shark
         geometry={nodes.Shark_Fin003.geometry}
         material={materials['Shark Fin']}
         position={[-6.97, -0.25, -7.23]}
@@ -143,7 +143,7 @@ export function World(props) {
         initial={0}
         label={'Comics'}
         onDrawerToggle={props.onDrawerToggle}
-      />
+      /> */}
       <mesh
         geometry={nodes.Ocean_2.geometry}
         material={materials.Ocean}

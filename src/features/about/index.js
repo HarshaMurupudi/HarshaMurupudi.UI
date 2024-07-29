@@ -18,7 +18,7 @@ const About = () => {
           </span>
         </p>
         <p className='text-base lg:text-3xl text-gray-600 dark:text-white'>
-          Web Developer
+          Web Developer & Cartoonist
         </p>
       </div>
 
@@ -27,22 +27,15 @@ const About = () => {
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6 place-content-center'>
           <div className='p-6 order-last lg:order-first'>
+            <div>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
-              I sit at the intersection of programming and art. These two are at
-              the core of everything I make. Combining them into a coherent
-              career.
+              Building applications to solve problems and simplify processes is what I do. My work fits under the umbrellas of fullstack web development.
             </p>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
-              My work fits under the umbrellas of fullstack web development.
-              With some art sprinkled on top.
+              I'm currently working as application development contractor. I work with ReactJS on frontend and for the backend I use .NET.
             </p>
             <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
-              I work with ReactJS on frontend and for the backend I use NodeJS
-              or Java.
-            </p>
-            <p class='mb-3 font-normal text-gray-900 dark:text-gray-400'>
-              I'm currently working as fullstack developer at DMA. We're
-              developing IT solutions to solve problem for our clients.
+              Cartooning is my hobby. I love to draw cartoons to explain and express my thoughts.
             </p>
             <p class='mb-3 text-gray-900 dark:text-gray-400 break-words'>
               You can contact me by email at
@@ -51,18 +44,9 @@ const About = () => {
               </span>
               to say hi! I always appreciate meeting new people.
             </p>
-          </div>
-          <div className='p-1 lg:p-6'>
-            <img
-              className='h-auto w-2/3 rounded-lg ml-2'
-              src={'/images/me/harsha.jpg'}
-              alt=''
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className='mt-8'>
+            </div>
+            <div>
+            <div className='mt-8'>
         <div class='flex justify-center space-x-2 text-neutral-700 dark:text-neutral-300'>
           {/* Github */}
           <a
@@ -120,6 +104,17 @@ const About = () => {
           >
             <path d='M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z' />
           </svg>
+        </div>
+      </div>
+            </div>
+          </div>
+          <div className='p-1 lg:p-6'>
+            <img
+              className='h-auto w-2/3 rounded-lg ml-2'
+              src={'/images/me/harsha.jpg'}
+              alt=''
+            />
+          </div>
         </div>
       </div>
     </div>
