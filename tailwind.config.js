@@ -25,5 +25,5 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
   },
-  plugins: [require('flowbite/plugin'), require('flowbite/plugin')],
+  plugins: [require('flowbite/plugin')],
 };

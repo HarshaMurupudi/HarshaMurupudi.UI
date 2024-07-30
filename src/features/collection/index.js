@@ -9,7 +9,7 @@ const Collection = ({ onDrawerContentClick }) => {
     <div>
       <ImageCollection
         onDrawerContentClick={onDrawerContentClick}
-        contentCategory={'Collection'}
+        contentCategory={'Art'}
         collection={collectionData}
       />
     </div>
